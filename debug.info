@@ -1,0 +1,5 @@
+name = Debug
+description = Displays debug messages and preformatted arrays to the screen and also saves them into the apache error log.
+package = Development
+core = 6.x
+version = "6.x-1.0"

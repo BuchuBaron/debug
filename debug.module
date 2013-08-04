@@ -1,0 +1,26 @@
+<?php
+// debug.module v1.x for Drupal 6.x; author - charles@honeybadger.net;
+
+function debug_help($section='') {
+  switch ($section) {
+    case 'admin/modules#description':
+      return t('Display debug messages to the screen and to apache error log.');
+  };
+}
+function debug() {
+ $vars = func_get_args();
+ foreach ($vars as $var) {
+   drupal_set_message('<pre>' . print_r($var, TRUE) . '</pre>');
+   $stderr = fopen("php://stderr", "a");
+   fwrite($stderr, print_r($var, TRUE) . "\n");
+   fclose($stderr);
+ }
+} 
+function boot_debug() {
+  $vars = func_get_args();
+  foreach ($vars as $var) {
+    $stderr = fopen("php://stderr", "a");
+    fwrite($stderr, print_r($var, TRUE) . "\n");
+    fclose($stderr);
+  }
+}
