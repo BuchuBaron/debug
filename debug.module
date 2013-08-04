@@ -1,5 +1,5 @@
 <?php
-// debug.module v1.x for Drupal 6.x; author - charles@honeybadger.net;
+// debug.module v1.x for Drupal 7.x; author - charles@honeybadger.net;
 
 function debug_help($section='') {
   switch ($section) {
